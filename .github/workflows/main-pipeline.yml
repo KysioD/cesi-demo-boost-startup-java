@@ -36,9 +36,8 @@ jobs:
     uses: ./.github/workflows/secret-scanning.yml
 
   # ═══════════════════════════════════════════════
-  # ÉTAPE 4 : ANALYSE DES DÉPENDANCES (SCA)
+  # ÉTAPE 5 : SÉCURITÉ INFRASTRUCTURE AS CODE
   # ═══════════════════════════════════════════════
-  sca-dependency-scan:
-    needs: build-and-test  # Également en parallèle
-    uses: ./.github/workflows/sca-dependency-scan.yml
-    secrets: inherit  # ⚠️ IMPORTANT pour passer NVD_API_KEY
+  secure-iac-dockerfile-scan:
+    needs: build-and-test  # Toujours en parallèle
+    uses: ./.github/workflows/secure-iac-dockerfile-scan.yml
